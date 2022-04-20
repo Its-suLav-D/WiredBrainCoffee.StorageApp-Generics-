@@ -3,7 +3,7 @@
 using WiredBrainCoffee.StorageApp.Repositories;
 using WiredBrainCoffee.StorageApp.Entities;
 
-var empRepo = new GenericRepository<Employee>();
+var empRepo = new GenericRepositoryWithRemove<Employee>();
 empRepo.Add(new Employee {FirstName="Julia" });
 empRepo.Add(new Employee { FirstName = "Anna" });
 empRepo.Add(new Employee { FirstName = "Thomas" });

@@ -7,13 +7,18 @@ using WiredBrainCoffee.StorageApp.Entities;
 
 namespace WiredBrainCoffee.StorageApp.Repositories
 {
-    public class GenericRepository<T> where T: EntityBase
+    public class ListRepository<T> where T:class, IEntity, new()
     {
 
         private readonly List<T> _items = new(); 
         public void Add(T item)
         {
             _items.Add(item);
+        }
+
+        public T CreateItem()
+        {
+            return new T();
         }
 
         public T GetById(int id)
@@ -34,5 +39,4 @@ namespace WiredBrainCoffee.StorageApp.Repositories
         }
     }
 
-   
 }
